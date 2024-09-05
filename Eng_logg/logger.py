@@ -68,7 +68,7 @@ class SerialReader(asyncio.Protocol):
 
 async def send_start_command():
     """Асинхронная функция для отправки команды START на ардуино"""
-    await asyncio.sleep(6)
+    await asyncio.sleep(8)
     print("Sending START command to Arduino...")
     _, writer = await serial_asyncio.open_serial_connection(url=serial_port, baudrate=baud_rate)
     writer.write(b'START\n')   # Отправка команды в байтовой форме
